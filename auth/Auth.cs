@@ -149,7 +149,7 @@ namespace CloudBase {
 
     public async Task<UserInfo> GetUserInfoAsync() {
       Dictionary<string, dynamic> param = new Dictionary<string, dynamic>();
-      AuthResponse res = await this.core.Request.PostAsync<AuthResponse>("auth.getUserInfo", param);
+      UserInfoResponse res = await this.core.Request.PostAsync<UserInfoResponse>("auth.getUserInfo", param);
 
       if (!string.IsNullOrEmpty(res.Code)) {
         throw new CloudBaseException(res.Code, res.Message);
