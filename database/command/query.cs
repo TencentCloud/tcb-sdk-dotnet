@@ -10,16 +10,16 @@ namespace CloudBase {
 		public LogicCommand Neq(object val) {
 			return this.QueryOp(QueryCommandLiteral.NEQ, val);
 		}
-		public LogicCommand Gt(double val) {
+		public LogicCommand Gt(object val) {
 			return this.QueryOp(QueryCommandLiteral.GT, val);
 		}
-		public LogicCommand Gte(double val) {
+		public LogicCommand Gte(object val) {
 			return this.QueryOp(QueryCommandLiteral.GTE, val);
 		}
-		public LogicCommand Lt(double val) {
+		public LogicCommand Lt(object val) {
 			return this.QueryOp(QueryCommandLiteral.LT, val);
 		}
-		public LogicCommand Lte(double val) {
+		public LogicCommand Lte(object val) {
 			return this.QueryOp(QueryCommandLiteral.LTE, val);
 		}
 		public LogicCommand In(object vals) {
