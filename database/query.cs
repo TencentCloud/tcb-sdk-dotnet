@@ -40,7 +40,7 @@ namespace CloudBase {
 			if (!DbUtils.IsNullObject(this.FieldFilters)) {
 				param["query"] = this.FieldFilters;
 			}
-			if (DbUtils.IsNullOrEmptyArray(this.FieldOrders)) {
+			if (!DbUtils.IsNullOrEmptyArray(this.FieldOrders)) {
 				param["order"] = this.FieldOrders;
 			}
 			if (this.LimitCount != 0) {
