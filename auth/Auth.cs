@@ -222,5 +222,15 @@ namespace CloudBase {
 
       return accessToken;
     }
+
+    public AuthHeader GetAuthHeader() {
+      string accessToken = cache.GetStore(cache.AccessTokenKey);
+      string refreshToken = cache.GetStore(cache.RefreshTokenKey);
+
+      AuthHeader header = new AuthHeader();
+      header.SetHeader("x-cloudbase-credentials", accessToken + "/@@/" + refreshToken);
+
+      return header;
+    }
   }
 }
