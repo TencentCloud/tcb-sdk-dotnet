@@ -17,7 +17,7 @@ namespace CloudBase
     {
       JObject param = new JObject();
       
-      param["$regexp"] = this.Regexp;
+      param["$regex"] = this.Regexp;
       param["$options"] = this.Options;
       return param;
     }
