@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 // todo: 持久化cache
-namespace CloudBase {
-  class AuthCache {
+namespace CloudBase
+{
+  class AuthCache
+  {
     public readonly string AccessTokenKey;
     public readonly string AccessTokenExpireKey;
     public readonly string RefreshTokenKey;
@@ -12,7 +14,8 @@ namespace CloudBase {
 
     private Dictionary<string, string> MCache;
 
-    public AuthCache(Core core) {
+    public AuthCache(Core core)
+    {
       string envId = core.Env;
 
       this.AccessTokenKey = $"{envId}_{AuthCacheKey.ACCESS_TOKEN}";
@@ -24,42 +27,55 @@ namespace CloudBase {
       this.MCache = new Dictionary<string, string>();
     }
 
-    public async Task<string> GetStoreAsync(string key) {
-      return await Task<string>.Run(() => {
-        if (MCache.ContainsKey(key)) {
+    public async Task<string> GetStoreAsync(string key)
+    {
+      return await Task<string>.Run(() =>
+      {
+        if (MCache.ContainsKey(key))
+        {
           return MCache[key];
         }
         return null;
       });
     }
 
-    public async Task SetStoreAsync(string key, string value) {
-      await Task.Run(() => {
+    public async Task SetStoreAsync(string key, string value)
+    {
+      await Task.Run(() =>
+      {
         MCache[key] = value;
       });
     }
 
-    public async Task RemoveStoreAsync(string key) {
-      await Task.Run(() => {
+    public async Task RemoveStoreAsync(string key)
+    {
+      await Task.Run(() =>
+      {
         MCache.Remove(key);
       });
     }
 
-    public string GetStore(string key) {
+    public string GetStore(string key)
+    {
 
-      if (this.MCache.ContainsKey(key)) {
+      if (this.MCache.ContainsKey(key))
+      {
         return this.MCache[key];
-      } else {
+      }
+      else
+      {
         return null;
       }
     }
 
-    public void SetStore(string key, string value) {
+    public void SetStore(string key, string value)
+    {
       this.MCache[key] = value;
     }
 
-    public void RemoveStore(string key) {
+    public void RemoveStore(string key)
+    {
       this.MCache.Remove(key);
-    }    
+    }
   }
 }

@@ -1,7 +1,9 @@
 using Newtonsoft.Json.Linq;
 
-namespace CloudBase {
-  public class UserInfo {
+namespace CloudBase
+{
+  public class UserInfo
+  {
 
     // 用户在云开发的唯一ID
     public readonly string Uuid;
@@ -36,19 +38,20 @@ namespace CloudBase {
     // 用户头像链接
     public readonly string AvatarUrl;
 
-    public UserInfo(JObject data) {
-      Uuid = (string)data["uuid"];
-      Env = (string)data["envName"];
-      LoginType = (string)data["loginType"];
-      Appid = (string)data["appid"];
-      Openid = (string)data["openid"];
-      NickName = (string)data["nickName"];
-      Gender = (string)data["gender"];
-      Country = (string)data["country"];
-      Province = (string)data["province"];
-      City = (string)data["city"];
-      AvatarUrl = (string)data["avatarUrl"];
+    public UserInfo(JObject data)
+    {
+      Uuid = (string) data["uuid"];
+      Env = (string) data["envName"];
+      LoginType = (string) data["loginType"];
+      Appid = (string) data["appid"];
+      Openid = (string) data["openid"];
+      NickName = (string) data["nickName"];
+      Gender = (string) data["gender"];
+      Country = (string) data["country"];
+      Province = (string) data["province"];
+      City = (string) data["city"];
+      AvatarUrl = (string) data["avatarUrl"];
     }
-    
+
   }
 }

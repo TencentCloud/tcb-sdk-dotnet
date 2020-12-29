@@ -1,15 +1,19 @@
 using System;
 
-namespace CloudBase {
-  public class CloudBaseException : ApplicationException {
+namespace CloudBase
+{
+  public class CloudBaseException : ApplicationException
+  {
     public readonly string Code;
 
-    public CloudBaseException(string code, string message) : base(message) {
+    public CloudBaseException(string code, string message) : base(message)
+    {
       this.Code = code;
     }
   }
 
-  class CloudBaseExceptionCode {
+  class CloudBaseExceptionCode
+  {
     static public readonly string EMPTY_PARAM = "EMPTY_PARAM";
 
     static public readonly string INVALID_PARAM = "INVALID_PARAM";
