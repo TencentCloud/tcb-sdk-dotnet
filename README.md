@@ -1,5 +1,11 @@
 # CloudBase .NET SDK
 
+> **Warning**
+> 
+> DEPRECATED!
+> 
+> .NET SDK 已经停止维护，不推荐继续使用。您可以在 [CloudBase 官网](https://docs.cloudbase.net) 查看当前支持的 SDK 文档。
+
 ## 介绍
 
 CloudBase 提供开发应用所需服务和基础设施。CloudBase .NET SDK 让你可以在客户端访问 CloudBase 的服务。
